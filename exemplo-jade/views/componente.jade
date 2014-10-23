@@ -1,0 +1,10 @@
+extends layout
+block scripts
+	script(type='text/javascript', src='/js/libs/jquery.js')
+
+block content
+
+	div#pagina_inicial
+		ul#menu
+			- for(var i = 0; i < qtd; i++)
+				li.botao botao 

@@ -1,0 +1,10 @@
+{
+	"name" : "rede-social-iv-seccim",
+	"version" : "0.0.1",
+	"private" : true,
+	"dependecies" : {
+		"express" : ">=3.0.0",
+		"jade" : ">=0.0.1",
+		"mongoose" : ">=2.6.5"
+	}
+}
