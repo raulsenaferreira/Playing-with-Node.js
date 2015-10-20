@@ -40,9 +40,9 @@ app.get('/collection2/', function(req,res){
     res.send(items);
   });
 });
-app.get('/collection2/:universidade', function(req,res){
-  registro2.find({"universidade": req.params.universidade}).toArray(function(err, items) {            
-  console.log(req.params.universidade);  
+app.get('/collection2/:nota', function(req,res){
+  registro2.find({"nota": req.params.nota}).toArray(function(err, items) {            
+  console.log(req.params.nota);  
   res.send(items);
   });
 });
