@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Teste</title>
+</head>
+<body>
+	<style type="text/css">
+	a.vermelho{
+		color: red;
+		font-weight: bold;
+	}
+	p{
+		font-size: 24px;
+		color: #000000;
+	}
+	#box{
+		background-color: orange;
+		width: 400px;
+	}
+	#saida{
+		background-color: yellow;
+		width: 400px;
+	}
+	
+	</style>
+
+	<a href="http://jquery.com">JQuery</a>
+	<div id="box"><p>Escreva menos, faça mais.</p></div>
+	<div id="saida"></div>
+
+	<input style="display:none;" type="text" value="" maxlength="20"></input>
+	<select class="valor" style="display:none;">
+		<option value="aluno">Aluno</option>
+		<option value="curso">Curso</option>
+		<option value="faculdade">Faculdade</option>
+	</select>
+	<button style="display:none;"> Enviar </button>
+	<div id="conteudo">	</div>
+
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		$("a").click(function(event){
+			event.preventDefault();
+	// /*Exemplo 1 - Carregamento inicial da página*/
+	// 	//este exemplo não roda até que todas as imagens (ex:banners) terminem de carregar
+	// 	window.onload = function(){
+	// 		alert("Alô Mundo!");
+	// 	}
+	// 	//Jquery trata isso com o seguinte código
+
+	// 		alert('Alô Mundo!');
+
+		/*Exemplo 2 - pegando valores de elementos*/
+		
+		// $('.valor').css('display', 'block');
+		// $('button').css('display', 'block');
+		// $('input').css('display', 'block');  	
+
+		// $('button').click(function(){
+		// 	// var valor = $('.valor option:selected').val();//pegando valores de um select
+		// 	var valor = $('input').val();//pegando valores de um input
+		// 	alert(valor);
+		// });
+
+	// /*Exemplo 3 - o atributo click*/
+	// 	// este exemplo adiciona o evento no click do elemento desejado, neste caso o 'a' e depois direciona para o link desejado.
+	// 			alert("Obrigado por clicar!");
+
+
+	// 	//já este utiliza a propriedade preventDefault que retira qualquer ação do elemento, neste caso tiraremos o link do elemento.
+	// 			alert('Obrigado por clicar mas desta vez não irei para outra página!');
+	// 			event.preventDefault();
+
+
+
+	// /*Exemplo 4 - adicionando e removendo classes CSS*/
+	//Neste exemplo adicionamos e/ou removemos classes de estilo ao html
+	
+	// 		$('a').addClass('vermelho');
+	// 		//$('a').removeClass('vermelho');
+
+
+	/*Exemplo 5 - adicionando efeitos ao HTML*/
+		//Neste exemplo adicionaremos o efeito 'sumir' e 'mostrar', com velocidade de transição 'lenta'.
+
+		// 			$('#box').hide('slow');
+		// 			$('#box').show('slow'); 	
+
+	/* Exemplo 6 - adicionando Callback */
+		//Callbacks são funções que são executadas exatamente depois de outras funções, mantendo a ordem de eventos do script
+		
+			// sem usar callback
+
+			// 	$("#box").fadeOut(2000);
+			// 	$("#box").css({top: 200, left:100});
+			// 	$("#box").fadeIn(2000);
+
+			//usando callback
+
+			// 	$("#box").fadeOut(2000, function(){
+			// 		$("#box").css({top: 200, left:100});
+			// 		$("#box").fadeIn(2000);
+			// 	});	
+		
+	/* Exemplo 7 - adicionando conteudo html dentro de outro container html */
+			//pegando um conteudo html dentro de uma tag html e inserindo em outra tag html
+
+				// var str = $('#box').html();
+				// $('#saida').text(str);
+			
+				//modificando o conteudo html dentro da tag
+
+				//$('#box').html('<p>A vida fica mais fácil com jQuery!!</p>');
+
+
+
+		/* Exemplo 8 - colocando animação em blocos html*/
+			//uma das características do animate é aplicar efeitos css no elemento, com a diferença que essa transição ocorrerá em forma de animação.
+				// $("#box").animate({
+				// 	width: "70%",
+				// 	opacity: 0.4,
+				// 	marginLeft: "0.6in",
+				// 	fontSize: "3em",
+				// 	borderWidth: "10px"
+				// 	}, 1500 );
+			
+			//logo, podemos alterar a posição do bloco html usando animação.
+			// $('#box').append('<button class="vai"> >> </button>');
+			// $('#box').append('<button class="volta"> << </button>');
+			// $('#box').css('position','absolute');
+			// $('.vai').click(function(){
+			// 	$('#box').animate({	"left":"+=170px" }, "slow");//vc também pode utilizar valores em milisegundos
+			// });
+			// $('.volta').click(function(){
+			// 	$('#box').animate({	"left":"-=170px" }, "fast");
+			// });
+	
+			//podemos usar diferentes tipos de animação
+			// $('#box').append('<button class="mostrar"> mostrar </button>');
+			// $('#box').append('<button class="sumir"> sumir </button>');
+			// $('#saida').html('<p> texto aqui<br>texto aqui </p>');
+			// $('#saida').css({'position':'absolute'},{'background-color':'purple'});
+			// $('.mostrar').click(function(){
+			// 	$('#saida').animate({	height:170, opacity: 100 }, {duration: "slow"} );
+			// });
+			
+			// $('.sumir').click(function(){
+			// 	$('#saida').animate({	height:0, opacity: 0 }, {duration: "slow"} );
+			// });	
+
+		/* Exemplo 9 - utilizando ajax com jQuery */
+			// ajax é usado para comunicação com o servidor de forma assíncrona, sem a necessidade de reload na página.
+			
+			// $("#saida").load("resposta.php?p=ajax");
+			// $('.valor').css('display', 'block');
+			// $('button').css('display', 'block');
+		  	
+
+		 //  	$('button').click(function(){
+		 //  		var valor = $('.valor option:selected').val();
+		 //  		$.ajax({
+			// 	method: "get",			
+			// 	url: "resposta.php",//http://www.raulferreira.com.br/aula/
+			// 	data: "p=" + valor,
+
+			// 	beforeSend: function(){	 
+			// 	 $("#carregando").show("slow");
+			// 	},
+
+			// 	complete: function(){  
+			// 		$("#carregando").hide("slow");	
+			// 	},
+
+			// 	success: function(conteudo){
+			// 	  $("#saida").html(conteudo);
+			// 	}
+
+			//   });
+		 //    // Cancela o efeito do atributo href
+			// return false;
+
+		 //  	});
+
+		 /*Exemplo 10 - Utilizando o método data() para armazenar informações*/
+		 // para armazenar informação em forma de uma estrutura com chave e conteúdo
+		// $('#saida').data('categoria', {
+		// 	primeiro:'terror', segundo: 'suspense', terceiro: 'comédia', quarto: 'ação'
+		// });
+		 
+		// // para pegar a informação
+		// var categoria = $('#saida').data('categoria').terceiro; 
+		// alert(categoria);
+	  
+		});
+	});
+		
+	</script>
+</body>
+</html>
